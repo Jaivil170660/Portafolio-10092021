@@ -1,0 +1,51 @@
+(function ($) {
+  $(window).on("load", function (w) {
+ 		MakeEntC();
+		$('.quantity-down').click( function(e) {
+			var numb = $(this).next().find('.form-number');
+			var curval = parseInt(numb.val());
+			if (curval) {
+				curval--;
+				numb.val(curval).change();
+			}
+		});
+		$('.quantity-up').click( function(e) {
+			var numb = $(this).prev().find('.form-number');
+			var curval = parseInt(numb.val());
+			if (curval < 10) {
+				curval++;
+				numb.val(curval).change();
+			}
+		});
+
+		$('.form-number').on('change', function() {
+ 			MakeEntC();
+		});
+
+		function MakeEntC() {
+			var total = 0;
+			$(".colentf").each(function() {
+			  var price = parseInt($(this).find('.tohide').text());
+				var qty = parseInt($(this).find('.form-number').val());
+				if (qty) {
+					total = total + (price * qty);
+				}
+			});
+			var total = formatMoney(total, 0, ".", ",");
+			$('#totalent').html( "$ " + total );
+		}
+  });
+})(jQuery)
+
+function formatMoney(amount, decimalCount = 2, decimal = ".", thousands = ",") {
+  try {
+    decimalCount = Math.abs(decimalCount);
+    decimalCount = isNaN(decimalCount) ? 2 : decimalCount;
+    const negativeSign = amount < 0 ? "-" : "";
+    let i = parseInt(amount = Math.abs(Number(amount) || 0).toFixed(decimalCount)).toString();
+    let j = (i.length > 3) ? i.length % 3 : 0;
+    return negativeSign + (j ? i.substr(0, j) + thousands : '') + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands) + (decimalCount ? decimal + Math.abs(amount - i).toFixed(decimalCount).slice(2) : "");
+  } catch (e) {
+    console.log(e)
+  }
+}
