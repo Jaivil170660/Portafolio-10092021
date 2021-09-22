@@ -2,7 +2,7 @@
     background-color: #2196F3;
     padding: 2px;
     float: left;
-    width: 16.6%; /* The width is 20%, by default */
+    width: 25%; /* The width is 20%, by default */
 }
 
 .op1:hover {
@@ -13,7 +13,7 @@
     background-color: #2196F3;
     padding: 2px;
     float: left;
-    width: 16.6%; /* The width is 20%, by default */
+    width: 25%; /* The width is 20%, by default */
 }
 
 .op2:hover {
@@ -24,7 +24,7 @@
     background-color: #2196F3;
     padding: 2px;
     float: left;
-    width: 16.6%; /* The width is 20%, by default */
+    width: 25%; /* The width is 20%, by default */
 }
 
 .op3:hover {
@@ -35,14 +35,24 @@
     background-color: #2196F3;
     padding: 2px;
     float: left;
-    width: 16.6%; /* The width is 20%, by default */
+    width: 25%; /* The width is 20%, by default */
 }
 
 .op4:hover {
     background-color: gold;
 }
+.op5 {
+    background-color: #2196F3;
+    padding: 2px;
+    float: left;
+    width: 25%; /* The width is 20%, by default */
+}
+
+.op5:hover {
+    background-color: gold;
+}
 @media screen and (max-width: 800px) {
-    .op1, .op2, .op3, .op4{
+    .op1, .op2, .op3, .op4, .op5{
         width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
           }
         }
