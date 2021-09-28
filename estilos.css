@@ -49,7 +49,7 @@ ul.slider li{
     opacity: 0;
     width: inherit;
     height: inherit;
-    background-color: blueviolet;
+    
     transition: opacity .5s;
 }
 
