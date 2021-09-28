@@ -28,9 +28,7 @@
 .carrusel{
     margin:auto;
     background-color: blueviolet;
-    position: relative;
     width: 800px;
-    height: 400px;
     padding: 30px;
 }
 
@@ -40,7 +38,7 @@ ul,li{
     list-style: none;
 }
 
-ul.silder{
+ul.slider{
     width: 800px;
     height: 300px;
     position:relative;
@@ -70,8 +68,6 @@ ul.slider li:target{
 }
 
 .menu{
-    position:absolute;
-    top: 320px;
     text-align: center;
     margin: 20px;
 }
